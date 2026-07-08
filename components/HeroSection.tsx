@@ -52,7 +52,7 @@ export default function HeroSection() {
         }}
       />
 
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-10 pt-28 pb-20">
+      <div className="relative z-10 w-full max-w-[1400px] 2xl:max-w-[1600px] mx-auto px-6 lg:px-10 pt-28 pb-20">
         <div className="max-w-[520px]">
           <motion.div
             className="flex items-center gap-2 mb-7"

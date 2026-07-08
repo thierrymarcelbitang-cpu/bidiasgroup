@@ -36,11 +36,11 @@ export default function Footer() {
 
   return (
     <footer style={{ backgroundColor: "#020814", borderTop: "1px solid rgba(255,255,255,0.06)" }}>
-      <div className="max-w-7xl mx-auto px-6 py-14">
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-10">
+      <div className="max-w-[1400px] 2xl:max-w-[1600px] mx-auto px-6 lg:px-8 py-14 lg:py-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
 
           {/* Col 1 — Brand + contact */}
-          <div className="lg:col-span-1">
+          <div className="sm:col-span-2 lg:col-span-1">
             <Logo />
             <p
               className="mt-5 mb-6 leading-relaxed"
@@ -133,7 +133,7 @@ export default function Footer() {
 
       {/* Legal bar */}
       <div style={{ borderTop: "1px solid rgba(255,255,255,0.05)" }} className="py-4 px-6">
-        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
+        <div className="max-w-[1400px] 2xl:max-w-[1600px] mx-auto px-2 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p style={{ fontSize: "11px", color: "rgba(255,255,255,0.18)", fontFamily: "var(--font-inter), sans-serif" }}>
             © {new Date().getFullYear()} {t.copyright}
           </p>

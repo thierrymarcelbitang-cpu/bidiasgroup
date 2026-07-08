@@ -23,9 +23,9 @@ export default function ContactSection() {
   const col2 = t.links.slice(4);
 
   return (
-    <section id="contact" ref={ref} className="py-20" style={{ backgroundColor: "#020814" }}>
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
+    <section id="contact" ref={ref} className="py-20 lg:py-28" style={{ backgroundColor: "#020814" }}>
+      <div className="max-w-[1400px] 2xl:max-w-[1600px] mx-auto px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
 
           {/* Left — contact list */}
           <motion.div
@@ -90,7 +90,7 @@ export default function ContactSection() {
           {/* Center — Andre Bidias card */}
           <motion.div
             className="relative overflow-hidden"
-            style={{ borderRadius: "12px", minHeight: "280px" }}
+            style={{ borderRadius: "12px", aspectRatio: "3/2" }}
             initial={{ opacity: 0, y: 24 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.15 }}

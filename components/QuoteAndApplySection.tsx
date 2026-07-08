@@ -58,11 +58,11 @@ export default function QuoteAndApplySection() {
     <section
       id="freight-quote"
       ref={ref}
-      className="py-20"
+      className="py-20 lg:py-28"
       style={{ backgroundColor: "#071A36" }}
     >
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <div className="max-w-[1400px] 2xl:max-w-[1600px] mx-auto px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
 
           {/* LEFT — Freight Quote Form */}
           <motion.div

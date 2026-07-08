@@ -67,16 +67,16 @@ export default function Navbar() {
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
     >
-      <nav className="max-w-7xl mx-auto px-6 lg:px-8 flex items-center justify-between h-[68px]">
+      <nav className="max-w-[1400px] 2xl:max-w-[1600px] mx-auto px-6 lg:px-8 xl:px-10 2xl:px-12 flex items-center justify-between h-[68px]">
         <Logo />
 
         {/* Desktop center links */}
-        <div className="hidden lg:flex items-center gap-0.5">
+        <div className="hidden lg:flex items-center gap-3">
           {NAV_LINKS.map((link, i) => (
             <a
               key={link.label}
               href={link.href}
-              className="relative inline-flex items-center gap-1 px-3.5 py-2 text-[13px] font-medium transition-all duration-200 rounded"
+              className="relative inline-flex items-center gap-1 px-5 py-2.5 text-[13px] font-medium transition-all duration-200 rounded"
               style={{
                 color: i === 0 ? "#ffffff" : "rgba(255,255,255,0.52)",
                 fontFamily: "var(--font-inter), sans-serif",
@@ -91,7 +91,7 @@ export default function Navbar() {
               }}
             >
               {i === 0 && (
-                <span className="absolute bottom-0 left-3 right-3 h-[2px] rounded-full" style={{ background: "#FF9D00" }} />
+                <span className="absolute bottom-0 left-4 right-4 h-[2px] rounded-full" style={{ background: "#FF9D00" }} />
               )}
               {link.label}
               {link.dropdown && <ChevronDown size={12} style={{ color: "rgba(255,255,255,0.4)" }} />}

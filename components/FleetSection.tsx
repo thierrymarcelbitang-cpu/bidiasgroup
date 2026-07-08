@@ -19,67 +19,76 @@ export default function FleetSection() {
   const t = i18n[lang].fleet;
 
   return (
-    <section id="fleet" ref={ref} className="py-28" style={{ backgroundColor: "#020814" }}>
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 items-start">
+    <section id="fleet" ref={ref} className="py-24 lg:py-32" style={{ backgroundColor: "#020814" }}>
+      <div className="max-w-[1400px] 2xl:max-w-[1600px] mx-auto px-6 lg:px-8">
 
-          {/* Text panel */}
-          <motion.div
-            className="lg:col-span-1 lg:pr-4"
-            initial={{ opacity: 0, x: -24 }}
-            animate={inView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.65 }}
+        {/* Full-width section header */}
+        <motion.div
+          className="mb-12 lg:mb-16"
+          initial={{ opacity: 0, y: 24 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
+        >
+          <p
+            className="text-[11px] font-bold tracking-[0.3em] uppercase mb-4"
+            style={{ color: "#FF9D00", fontFamily: "var(--font-manrope), sans-serif" }}
           >
-            <p
-              className="text-[11px] font-bold tracking-[0.3em] uppercase mb-4"
-              style={{ color: "#FF9D00", fontFamily: "var(--font-manrope), sans-serif" }}
-            >
-              {t.eyebrow}
-            </p>
-            <h2
-              className="font-black text-white leading-[1.1] mb-4"
-              style={{
-                fontFamily: "var(--font-manrope), sans-serif",
-                fontSize: "clamp(1.6rem, 3vw, 2.4rem)",
-              }}
-            >
-              {t.heading1}
-              <br />
-              {t.heading2}
-            </h2>
-            <p
-              className="leading-relaxed mb-6"
-              style={{
-                color: "#B6C2D3",
-                fontSize: "14px",
-                fontFamily: "var(--font-inter), sans-serif",
-                lineHeight: 1.7,
-              }}
-            >
-              {t.desc}
-            </p>
-            <a
-              href="#freight-quote"
-              className="inline-flex items-center gap-1.5 font-semibold text-[13px] group transition-colors"
-              style={{ color: "#FF9D00", fontFamily: "var(--font-manrope), sans-serif" }}
-            >
-              {t.cta}
-              <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
-            </a>
-          </motion.div>
+            {t.eyebrow}
+          </p>
 
-          {/* 3 fleet photo cards */}
+          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4 lg:gap-16">
+            <div>
+              <h2
+                className="font-black text-white leading-[1.08]"
+                style={{
+                  fontFamily: "var(--font-manrope), sans-serif",
+                  fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)",
+                  marginBottom: "14px",
+                }}
+              >
+                {t.heading1}
+                <br />
+                {t.heading2}
+              </h2>
+              <p
+                style={{
+                  color: "#B6C2D3",
+                  fontSize: "15px",
+                  fontFamily: "var(--font-inter), sans-serif",
+                  lineHeight: 1.7,
+                  maxWidth: "480px",
+                }}
+              >
+                {t.desc}
+              </p>
+            </div>
+
+            <div className="flex-shrink-0">
+              <a
+                href="#freight-quote"
+                className="inline-flex items-center gap-1.5 font-semibold text-[13px] group transition-colors"
+                style={{ color: "#FF9D00", fontFamily: "var(--font-manrope), sans-serif" }}
+              >
+                {t.cta}
+                <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
+              </a>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* 3-column fleet cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
           {t.cards.map(({ label, desc }, i) => (
             <motion.div
               key={label}
-              className="lg:col-span-1 group overflow-hidden"
+              className="group overflow-hidden"
               style={{
-                borderRadius: "8px",
+                borderRadius: "10px",
                 border: "1px solid rgba(255,255,255,0.08)",
               }}
               initial={{ opacity: 0, y: 28 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: 0.12 + i * 0.1, duration: 0.6 }}
+              transition={{ delay: 0.1 + i * 0.1, duration: 0.6 }}
               whileHover={{ y: -4, transition: { duration: 0.25 } }}
             >
               <div className="relative overflow-hidden" style={{ aspectRatio: "16/10" }}>
@@ -89,7 +98,7 @@ export default function FleetSection() {
                   alt={label}
                   className="object-cover transition-transform duration-700 group-hover:scale-[1.05]"
                   quality={90}
-                  sizes="(max-width: 768px) 100vw, (max-width: 1280px) 33vw, 420px"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1400px) 33vw, 440px"
                 />
                 <div
                   className="absolute inset-0"
@@ -99,15 +108,15 @@ export default function FleetSection() {
                 />
               </div>
 
-              <div className="p-5" style={{ backgroundColor: "#071A36" }}>
+              <div className="p-6" style={{ backgroundColor: "#071A36" }}>
                 <h3
-                  className="font-bold text-white mb-1"
-                  style={{ fontSize: "15px", fontFamily: "var(--font-manrope), sans-serif" }}
+                  className="font-bold text-white mb-1.5"
+                  style={{ fontSize: "16px", fontFamily: "var(--font-manrope), sans-serif" }}
                 >
                   {label}
                 </h3>
                 <p
-                  className="mb-3"
+                  className="mb-4"
                   style={{
                     fontSize: "13px",
                     color: "#B6C2D3",
